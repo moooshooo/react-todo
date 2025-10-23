@@ -1,37 +1,48 @@
-
-import { useState } from 'react'
-
-import './App.css'
+import { useState } from "react";
+import "./mos.css";
+import TodoList from "./todos";
 
 function App() {
+  const [todos, setTodos] = useState([]); //Skapar en array
+  const [userInput, setUserInput] = useState("");
 
-  const [count, setCount] = useState("")
+  const handleUserInput = (e) => setUserInput(e.target.value);
 
-  const clickBtn=()=>{
-    
-  }
+  const addTodo = () => {
+    const newTodoList = [...todos, userInput];
+    setTodos(newTodoList);
+    setUserInput("");
+  };
 
-  /* let count = 6 */
-
-/* 
-  const clickBtn = () => {
-    count++ //enklare men otydlig
-    //count += 1 //Lite tydligare
-
-    console.log(count) //Detta kommer visa i consolen att 
-  }
-   */
 
   return (
     <>
-      <h1>Mos Sandbox: {count}</h1>
-      <div className="card">
-        <button onClick={clickBtn}>
-          count is {count}
-        </button>
+      <div id="todo-container">
+        <h1>MoS ToDo</h1>
+        <div id="add-section">
+          <input
+            type="text"
+            id="input"
+            onChange={handleUserInput}
+            value={userInput}
+          />
+          <button id="add-task" onClick={addTodo}>
+            Lägg till{" "}
+          </button>
+        </div>
+
+        <TodoList todos={todos} setTodos={setTodos}  />
+
+        {/* 
+        <div id="todos-section">
+          {todos.map((todo) => (
+            <p>{todo}</p>
+            ))}
+        </div>
+ */}
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

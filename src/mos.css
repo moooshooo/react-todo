@@ -1,0 +1,87 @@
+/*
+ * @Author: MoS 
+ * @Date: 2025-10-23 11:02:06 
+ * @Last Modified by: MoS
+ * @Last Modified time: 2025-10-23 14:23:55
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap");
+
+body {
+  font-family: "Cabin Sketch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #999;
+  transition: all 0.3s;
+}
+
+#todo-container {
+  background-color: #eee;
+  border-radius: 10px;
+  box-shadow: 1px 1px 20px #666;
+  border: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#add-section {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  gap: 0px;
+  border-radius: 50px;
+  box-shadow: 0px 1px 5px 5px #dfdfdf;
+  border: solid 1px #eee;
+  padding: 0px 0px 0px 20px;
+  background-color: #fff;
+  height: 60px;
+}
+
+#input {
+  border: solid 0px #eee;
+  padding: 10px;
+  font-size: 1.3em;
+  color: #444;
+}
+
+#input:active,
+#input:focus {
+  border: solid 0px #eee;
+}
+.todo-div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+#add-task {
+  height: 60px;
+  border-radius: 40px;
+  background-color: green;
+  color: #fff;
+  border: 1px solid #eee;
+  padding: 20px;
+}
+
+#delete-task {
+  height: 30px;
+  border-radius: 20px;
+  background-color: red;
+  color: #fff;
+  border: 1px solid #eee;
+  padding: 8px;
+}
+#delete-task:hover {
+  background-color: #990000;
+}
+@media screen and (max-width: 450px) {
+  #root {
+    width: 90%;
+  }
+}
